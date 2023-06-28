@@ -25,7 +25,7 @@ class VideoStreaming:
         thread.start()
 
     def __video_streaming_server_thread(self):
-        video_capture = cv2.VideoCapture(self.id)
+        video_capture = cv2.VideoCapture(0)
         while True:
             ret, frame = video_capture.read()
             encoded_frame = cv2.imencode('.jpg', frame)[1].tobytes()
